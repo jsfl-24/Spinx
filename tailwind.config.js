@@ -11,7 +11,10 @@ export default {
         background: '#000000',
         light: '#FFFFFF',
         grey: '#808080',
-      }
+      },
+      fontFamily: {
+        gothic: ["League Gothic", "sans-serif"],
+      },
     },
   },
   plugins: [],

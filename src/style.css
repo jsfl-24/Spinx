@@ -1,10 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap");
+
 /* You can add your custom styles here */
-h1 {
-  color: #a42525;
-  font-size: 5rem;
-  text-align: center;
-  margin-top: 2rem;
-}
