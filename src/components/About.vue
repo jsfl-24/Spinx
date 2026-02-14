@@ -199,7 +199,7 @@ onMounted(() => {
       </div>
 
       <!-- Team Section -->
-      <div class="team-section">
+      <div id="team" class="team-section">
         <h2 class="section-title">Meet the Team</h2>
         <div
           class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"

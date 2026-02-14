@@ -72,9 +72,14 @@ const loopScroll = () => {
   if (!isPaused.value) {
     const viewport = carouselRef.value;
     const maxScroll = viewport.scrollWidth / 2;
-    viewport.scrollLeft += scrollSpeed;
-    if (viewport.scrollLeft >= maxScroll) {
-      viewport.scrollLeft = 0;
+    viewport.scrollLeft = (viewport.scrollLeft + scrollSpeed) % maxScroll;
+  }
+
+  if (carouselRef.value) {
+    const viewport = carouselRef.value;
+    const maxScroll = viewport.scrollWidth / 2;
+    if (viewport.scrollLeft < 0) {
+      viewport.scrollLeft += maxScroll;
     }
   }
 

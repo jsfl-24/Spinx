@@ -98,6 +98,7 @@ onMounted(() => {
           <div class="hidden md:flex items-center gap-8 text-xs uppercase">
             <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
+            <a href="#team" class="nav-link">Team</a>
             <a href="#gallery" class="nav-link">Gallery</a>
             <a href="#contact" class="nav-link">Contact</a>
           </div>
@@ -122,6 +123,9 @@ onMounted(() => {
           </a>
           <a href="#about" class="mobile-link" @click="closeMobileMenu">
             About
+          </a>
+          <a href="#team" class="mobile-link" @click="closeMobileMenu">
+            Team
           </a>
           <a href="#gallery" class="mobile-link" @click="closeMobileMenu">
             Gallery
