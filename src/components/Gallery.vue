@@ -142,22 +142,6 @@ onMounted(() => {
 
       <!-- Carousel -->
       <div class="gallery-carousel-wrapper">
-        <!-- Navigation Buttons -->
-        <button
-          class="carousel-nav carousel-nav-prev"
-          @click="navigateCarousel('prev')"
-          aria-label="Previous image"
-        >
-          ←
-        </button>
-        <button
-          class="carousel-nav carousel-nav-next"
-          @click="navigateCarousel('next')"
-          aria-label="Next image"
-        >
-          →
-        </button>
-
         <div
           class="gallery-carousel"
           @mouseenter="isPaused = true"
@@ -188,6 +172,24 @@ onMounted(() => {
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="carousel-controls">
+          <button
+            class="carousel-nav carousel-nav-prev"
+            @click="navigateCarousel('prev')"
+            aria-label="Previous image"
+          >
+            ←
+          </button>
+          <button
+            class="carousel-nav carousel-nav-next"
+            @click="navigateCarousel('next')"
+            aria-label="Next image"
+          >
+            →
+          </button>
         </div>
       </div>
     </div>
@@ -312,11 +314,14 @@ onMounted(() => {
   min-width: 0;
 }
 
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
 .carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
   width: 50px;
   height: 50px;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -336,15 +341,7 @@ onMounted(() => {
   border-color: rgba(243, 242, 107, 0.8);
   color: #f3f26b;
   background: rgba(0, 0, 0, 0.8);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-nav-prev {
-  left: -70px;
-}
-
-.carousel-nav-next {
-  right: -70px;
+  transform: scale(1.1);
 }
 
 .image-card {
@@ -413,19 +410,6 @@ onMounted(() => {
     font-size: 1.3rem;
   }
 
-  .carousel-nav-prev {
-    left: -60px;
-  }
-
-  .carousel-nav-next {
-    right: -60px;
-  }
-
-  .orbit-lg {
-    width: 700px;
-    height: 700px;
-  }
-
   .orbit-md {
     width: 500px;
     height: 500px;
@@ -442,14 +426,6 @@ onMounted(() => {
     width: 36px;
     height: 36px;
     font-size: 1.1rem;
-  }
-
-  .carousel-nav-prev {
-    left: -50px;
-  }
-
-  .carousel-nav-next {
-    right: -50px;
   }
 
   .overlay-title {
