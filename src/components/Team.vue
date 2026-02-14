@@ -38,82 +38,82 @@ onMounted(() => {
         >
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
-              alt="Alex Johnson"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mahatma-Gandhi%2C_studio%2C_1931.jpg/440px-Mahatma-Gandhi%2C_studio%2C_1931.jpg"
+              alt="Mahatma Gandhi"
               class="team-avatar"
             />
-            <h3 class="team-name">Alex Johnson</h3>
-            <p class="team-role">Founder & CEO</p>
+            <h3 class="team-name">Mahatma Gandhi</h3>
+            <p class="team-role">Father of the Nation</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop"
-              alt="Sarah Chen"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Jawaharlal_Nehru%2C_1963.jpg/440px-Jawaharlal_Nehru%2C_1963.jpg"
+              alt="Jawaharlal Nehru"
               class="team-avatar"
             />
-            <h3 class="team-name">Sarah Chen</h3>
-            <p class="team-role">CTO</p>
+            <h3 class="team-name">Jawaharlal Nehru</h3>
+            <p class="team-role">First Prime Minister</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
-              alt="Marcus Lee"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Sardar_Vallabhbhai_Patel.jpg/440px-Sardar_Vallabhbhai_Patel.jpg"
+              alt="Sardar Vallabhbhai Patel"
               class="team-avatar"
             />
-            <h3 class="team-name">Marcus Lee</h3>
-            <p class="team-role">Head of Design</p>
+            <h3 class="team-name">Sardar Vallabhbhai Patel</h3>
+            <p class="team-role">Iron Man of India</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop"
-              alt="Lisa Rodriguez"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sarojini_Naidu%2C_1920.jpg/440px-Sarojini_Naidu%2C_1920.jpg"
+              alt="Sarojini Naidu"
               class="team-avatar"
             />
-            <h3 class="team-name">Lisa Rodriguez</h3>
-            <p class="team-role">Operations Lead</p>
+            <h3 class="team-name">Sarojini Naidu</h3>
+            <p class="team-role">Nightingale of India</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
-              alt="James Park"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/SubhasChandraBose.jpg/440px-SubhasChandraBose.jpg"
+              alt="Subhas Chandra Bose"
               class="team-avatar"
             />
-            <h3 class="team-name">James Park</h3>
-            <p class="team-role">Protocol Engineer</p>
+            <h3 class="team-name">Subhas Chandra Bose</h3>
+            <p class="team-role">Netaji</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop"
-              alt="Emma Stone"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Balagangadharclarke.jpg/440px-Balagangadharclarke.jpg"
+              alt="Bal Gangadhar Tilak"
               class="team-avatar"
             />
-            <h3 class="team-name">Emma Stone</h3>
-            <p class="team-role">Research Lead</p>
+            <h3 class="team-name">Bal Gangadhar Tilak</h3>
+            <p class="team-role">Lokmanya</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
-              alt="Michael Torres"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Bhagat_Singh_1907-1931.jpg/440px-Bhagat_Singh_1907-1931.jpg"
+              alt="Bhagat Singh"
               class="team-avatar"
             />
-            <h3 class="team-name">Michael Torres</h3>
-            <p class="team-role">Lead Developer</p>
+            <h3 class="team-name">Bhagat Singh</h3>
+            <p class="team-role">Revolutionary</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop"
-              alt="Jessica Park"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Rani_Lakshmi_Bai_of_Jhansi.jpg/440px-Rani_Lakshmi_Bai_of_Jhansi.jpg"
+              alt="Rani of Jhansi"
               class="team-avatar"
             />
-            <h3 class="team-name">Jessica Park</h3>
-            <p class="team-role">Product Manager</p>
+            <h3 class="team-name">Rani of Jhansi</h3>
+            <p class="team-role">Warrior Queen</p>
           </div>
         </div>
       </div>
