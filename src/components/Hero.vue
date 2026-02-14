@@ -164,7 +164,9 @@ onMounted(() => {
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 w-full"
       >
-        <div class="flex flex-col gap-6 lg:gap-10 justify-center md:order-1">
+        <div
+          class="hidden md:flex flex-col gap-6 lg:gap-10 justify-center md:order-1"
+        >
           <div class="hero-stat">
             <p class="stat-value">20+</p>
             <p class="stat-label">Workshops Conducted</p>
@@ -182,9 +184,7 @@ onMounted(() => {
           <p class="hero-kicker"></p>
           <h1 class="hero-title">SpinX 360</h1>
 
-          <p class="hero-sub">
-            Learn-Build-Innovate.
-          </p>
+          <p class="hero-sub">Learn-Build-Innovate.</p>
 
           <div
             class="mt-8 lg:mt-10 flex flex-col sm:flex-row justify-center gap-4"
@@ -199,7 +199,7 @@ onMounted(() => {
         </div>
 
         <div
-          class="flex flex-col gap-6 lg:gap-10 justify-center items-start md:items-end md:order-2 lg:order-3"
+          class="hidden md:flex flex-col gap-6 lg:gap-10 justify-center items-start md:items-end md:order-2 lg:order-3"
         >
           <div class="hero-stat text-left md:text-right">
             <p class="stat-value">20+</p>
