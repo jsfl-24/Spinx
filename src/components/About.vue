@@ -117,7 +117,7 @@ onMounted(() => {
           class="feature-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <div class="feature-card">
-            <div class="feature-icon">🔒</div>
+            <div class="feature-icon"></div>
             <h3 class="feature-name">Secure & Reliable</h3>
             <p class="feature-desc">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
@@ -126,7 +126,7 @@ onMounted(() => {
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
+            <div class="feature-icon"></div>
             <h3 class="feature-name">Lightning Fast</h3>
             <p class="feature-desc">
               Ut labore et dolore magna aliqua enim ad minim veniam quis nostrud
@@ -135,7 +135,7 @@ onMounted(() => {
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">🌍</div>
+            <div class="feature-icon"></div>
             <h3 class="feature-name">Global Community</h3>
             <p class="feature-desc">
               Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute
@@ -144,7 +144,7 @@ onMounted(() => {
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">💡</div>
+            <div class="feature-icon"></div>
             <h3 class="feature-name">Innovation Driven</h3>
             <p class="feature-desc">
               Reprehenderit in voluptate velit esse cillum dolore eu fugiat
@@ -153,7 +153,7 @@ onMounted(() => {
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">🤝</div>
+            <div class="feature-icon"></div>
             <h3 class="feature-name">Community First</h3>
             <p class="feature-desc">
               Excepteur sint occaecat cupidatat non proident sunt in culpa qui
@@ -162,7 +162,7 @@ onMounted(() => {
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">📊</div>
+            <div class="feature-icon"></div>
             <h3 class="feature-name">Data Driven</h3>
             <p class="feature-desc">
               Mollit anim id est laborum sed ut perspiciatis unde omnis iste
@@ -202,10 +202,14 @@ onMounted(() => {
       <div class="team-section">
         <h2 class="section-title">Meet the Team</h2>
         <div
-          class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           <div class="team-card">
-            <div class="team-avatar">👨‍💼</div>
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+              alt="Alex Johnson"
+              class="team-avatar"
+            />
             <h3 class="team-name">Alex Johnson</h3>
             <p class="team-role">Founder & CEO</p>
             <p class="team-bio">
@@ -215,7 +219,11 @@ onMounted(() => {
           </div>
 
           <div class="team-card">
-            <div class="team-avatar">👩‍💻</div>
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop"
+              alt="Sarah Chen"
+              class="team-avatar"
+            />
             <h3 class="team-name">Sarah Chen</h3>
             <p class="team-role">CTO</p>
             <p class="team-bio">
@@ -225,7 +233,11 @@ onMounted(() => {
           </div>
 
           <div class="team-card">
-            <div class="team-avatar">👨‍🎨</div>
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+              alt="Marcus Lee"
+              class="team-avatar"
+            />
             <h3 class="team-name">Marcus Lee</h3>
             <p class="team-role">Head of Design</p>
             <p class="team-bio">
@@ -235,7 +247,11 @@ onMounted(() => {
           </div>
 
           <div class="team-card">
-            <div class="team-avatar">👩‍💼</div>
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop"
+              alt="Lisa Rodriguez"
+              class="team-avatar"
+            />
             <h3 class="team-name">Lisa Rodriguez</h3>
             <p class="team-role">Operations Lead</p>
             <p class="team-bio">
@@ -245,7 +261,11 @@ onMounted(() => {
           </div>
 
           <div class="team-card">
-            <div class="team-avatar">👨‍🚀</div>
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+              alt="James Park"
+              class="team-avatar"
+            />
             <h3 class="team-name">James Park</h3>
             <p class="team-role">Protocol Engineer</p>
             <p class="team-bio">
@@ -255,12 +275,44 @@ onMounted(() => {
           </div>
 
           <div class="team-card">
-            <div class="team-avatar">👩‍🔬</div>
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop"
+              alt="Emma Stone"
+              class="team-avatar"
+            />
             <h3 class="team-name">Emma Stone</h3>
             <p class="team-role">Research Lead</p>
             <p class="team-bio">
               Consequat duis aute irure dolor. Pioneering new approaches to
               consensus and security.
+            </p>
+          </div>
+
+          <div class="team-card">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+              alt="Michael Torres"
+              class="team-avatar"
+            />
+            <h3 class="team-name">Michael Torres</h3>
+            <p class="team-role">Lead Developer</p>
+            <p class="team-bio">
+              Lorem ipsum dolor sit amet. Building scalable infrastructure and
+              optimizing performance.
+            </p>
+          </div>
+
+          <div class="team-card">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop"
+              alt="Jessica Park"
+              class="team-avatar"
+            />
+            <h3 class="team-name">Jessica Park</h3>
+            <p class="team-role">Product Manager</p>
+            <p class="team-bio">
+              Sed do eiusmod tempor incididunt. Focused on delivering
+              exceptional product experiences.
             </p>
           </div>
         </div>
@@ -488,7 +540,16 @@ onMounted(() => {
 }
 
 .team-avatar {
-  font-size: 3.2rem;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.team-card:hover .team-avatar {
+  filter: grayscale(0%);
 }
 
 .team-name {

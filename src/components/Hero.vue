@@ -95,7 +95,7 @@ onMounted(() => {
             <span class="nav-wordmark">SpinX 360</span>
           </router-link>
 
-          <div class="hidden sm:flex items-center gap-8 text-xs uppercase">
+          <div class="hidden md:flex items-center gap-8 text-xs uppercase">
             <router-link to="/" class="nav-link">Home</router-link>
             <router-link to="/services" class="nav-link">
               Services
@@ -107,7 +107,7 @@ onMounted(() => {
           </div>
 
           <button
-            class="hamburger sm:hidden"
+            class="hamburger md:hidden"
             type="button"
             aria-label="Toggle navigation"
             :aria-expanded="isMobileMenuOpen"
@@ -120,7 +120,7 @@ onMounted(() => {
         </div>
         <div class="nav-divider" />
 
-        <div v-show="isMobileMenuOpen" class="mobile-menu sm:hidden">
+        <div v-show="isMobileMenuOpen" class="mobile-menu md:hidden">
           <router-link to="/" class="mobile-link" @click="closeMobileMenu">
             Home
           </router-link>
@@ -319,6 +319,9 @@ onMounted(() => {
   flex-direction: column;
   gap: 5px;
   padding: 6px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .hamburger-line {
@@ -326,6 +329,16 @@ onMounted(() => {
   height: 2px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 999px;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
 }
 
 .mobile-menu {
