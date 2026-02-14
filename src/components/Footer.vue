@@ -12,7 +12,7 @@
         <div class="brand-block">
           <div class="brand-mark">
             <img src="/SpinX_Logo.png" alt="SpinX" class="brand-logo" />
-            <span class="brand-name">SpinX Network</span>
+            <span class="brand-name">SpinX 360</span>
           </div>
           <p class="brand-copy">
             A community-first protocol powering consumer apps with seamless
@@ -20,7 +20,7 @@
           </p>
         </div>
 
-        <div class="link-grid">
+        <!--<div class="link-grid">
           <div class="link-col">
             <p class="link-title">Products</p>
             <a class="link-item" href="#">Protocol</a>
@@ -45,7 +45,7 @@
             <a class="link-item" href="#">Careers</a>
             <a class="link-item" href="#">Press</a>
           </div>
-        </div>
+        </div>-->
       </div>
 
       <div class="footer-bottom">
