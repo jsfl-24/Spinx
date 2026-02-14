@@ -38,82 +38,82 @@ onMounted(() => {
         >
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mahatma-Gandhi%2C_studio%2C_1931.jpg/440px-Mahatma-Gandhi%2C_studio%2C_1931.jpg"
-              alt="Mahatma Gandhi"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Mahatma Gandhi</h3>
-            <p class="team-role">Father of the Nation</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Jawaharlal_Nehru%2C_1963.jpg/440px-Jawaharlal_Nehru%2C_1963.jpg"
-              alt="Jawaharlal Nehru"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Jawaharlal Nehru</h3>
-            <p class="team-role">First Prime Minister</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Sardar_Vallabhbhai_Patel.jpg/440px-Sardar_Vallabhbhai_Patel.jpg"
-              alt="Sardar Vallabhbhai Patel"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Sardar Vallabhbhai Patel</h3>
-            <p class="team-role">Iron Man of India</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sarojini_Naidu%2C_1920.jpg/440px-Sarojini_Naidu%2C_1920.jpg"
-              alt="Sarojini Naidu"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Sarojini Naidu</h3>
-            <p class="team-role">Nightingale of India</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/SubhasChandraBose.jpg/440px-SubhasChandraBose.jpg"
-              alt="Subhas Chandra Bose"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Subhas Chandra Bose</h3>
-            <p class="team-role">Netaji</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Balagangadharclarke.jpg/440px-Balagangadharclarke.jpg"
-              alt="Bal Gangadhar Tilak"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Bal Gangadhar Tilak</h3>
-            <p class="team-role">Lokmanya</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Bhagat_Singh_1907-1931.jpg/440px-Bhagat_Singh_1907-1931.jpg"
-              alt="Bhagat Singh"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Bhagat Singh</h3>
-            <p class="team-role">Revolutionary</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
 
           <div class="team-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Rani_Lakshmi_Bai_of_Jhansi.jpg/440px-Rani_Lakshmi_Bai_of_Jhansi.jpg"
-              alt="Rani of Jhansi"
+              src="https://cdn.britannica.com/58/129958-050-C0EF01A4/Adolf-Hitler-1933.jpg"
+              alt="Adolf Hitler"
               class="team-avatar"
             />
-            <h3 class="team-name">Rani of Jhansi</h3>
-            <p class="team-role">Warrior Queen</p>
+            <h3 class="team-name">Adolf Hitler</h3>
+            <p class="team-role">Founder of the Nazi Party</p>
           </div>
         </div>
       </div>
