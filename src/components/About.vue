@@ -79,20 +79,20 @@ onMounted(() => {
         <div class="mission-block">
           <h2 class="mission-title">Our Mission</h2>
           <p class="mission-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            To deliver practical drone education through hands-on training,
+            simulations, and guided learning, empowering individuals to fly
+            safely, develop technical skills, and confidently engage with
+            real-world drone applications and industry standards.
           </p>
         </div>
 
         <div class="mission-block">
           <h2 class="mission-title">Our Vision</h2>
           <p class="mission-text">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum sed ut perspiciatis.
+            To become a leading drone learning ecosystem that empowers
+            individuals to master the skies, innovate with confidence, and shape
+            the future of unmanned aerial technology through accessible,
+            practical, and industry-driven education.
           </p>
         </div>
       </div>
