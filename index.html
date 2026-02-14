@@ -10,9 +10,86 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>spinx-vue-app</title>
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      #preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .counter-box {
+        width: 200px;
+        height: 200px;
+        border: 2px solid #333;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Space Grotesk', monospace;
+        font-size: 3rem;
+        font-weight: 300;
+        color: #888;
+      }
+    </style>
   </head>
   <body>
+    <div id="preloader">
+      <div class="counter-box">
+        <span id="counter">0%</span>
+      </div>
+    </div>
+    
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      let counter = 0;
+      let counterElement = document.getElementById('counter');
+      let isLoaded = false;
+
+      // Animate counter smoothly
+      let counterInterval = setInterval(() => {
+        if (counter < 99 && !isLoaded) {
+          counter += Math.random() * 3; // Random increment for realistic feel
+          if (counter > 99) counter = 99;
+          counterElement.textContent = Math.floor(counter) + '%';
+        }
+      }, 50);
+
+      function hidePreloader() {
+        counter = 100;
+        counterElement.textContent = '100%';
+        clearInterval(counterInterval);
+        
+        setTimeout(() => {
+          document.getElementById('preloader').classList.add('hidden');
+        }, 300);
+      }
+
+      // Wait for window load
+      window.addEventListener('load', () => {
+        isLoaded = true;
+        hidePreloader();
+      });
+
+      // Fallback: hide after max time even if not fully loaded
+      setTimeout(() => {
+        if (!isLoaded) {
+          hidePreloader();
+        }
+      }, 10000); // 10 seconds max
+    </script>
   </body>
 </html>
