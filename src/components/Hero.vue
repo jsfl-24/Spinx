@@ -298,7 +298,7 @@ onMounted(() => {
   padding: 10px 20px;
 }
 
-.nav-divider {
+/*.nav-divider {
   height: 1px;
   margin-top: 18px;
   background: linear-gradient(
@@ -308,7 +308,7 @@ onMounted(() => {
     transparent
   );
 }
-
+*/
 .nav-wordmark {
   font-size: 0.8rem;
   letter-spacing: 0.16em;
