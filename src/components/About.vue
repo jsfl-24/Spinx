@@ -161,23 +161,23 @@ Our Aim.        </h1>
       <div class="stats-section mb-32">
         <div class="stats-grid grid grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="stat-block">
-            <p class="stat-number">50K+</p>
-            <p class="stat-name">Active Users</p>
+            <p class="stat-number">50+</p>
+            <p class="stat-name">Active Interns</p>
             <span class="stat-underline" />
           </div>
           <div class="stat-block">
-            <p class="stat-number">200M+</p>
-            <p class="stat-name">Transactions</p>
+            <p class="stat-number">20+</p>
+            <p class="stat-name">Instructors</p>
             <span class="stat-underline" />
           </div>
           <div class="stat-block">
-            <p class="stat-number">$500M+</p>
-            <p class="stat-name">Total Volume</p>
+            <p class="stat-number">15+</p>
+            <p class="stat-name">Workshops</p>
             <span class="stat-underline" />
           </div>
           <div class="stat-block">
-            <p class="stat-number">150+</p>
-            <p class="stat-name">Partners</p>
+            <p class="stat-number">10+</p>
+            <p class="stat-name">Drones</p>
             <span class="stat-underline" />
           </div>
         </div>
@@ -193,7 +193,7 @@ Our Aim.        </h1>
         <div
           class="cta-buttons flex flex-col sm:flex-row justify-center gap-4 mt-8"
         >
-          <button class="cta-primary">Explore Docs</button>
+          <button class="cta-primary">Gallery</button>
           <button class="cta-secondary">Contact Us</button>
         </div>
       </div>
@@ -414,7 +414,7 @@ Our Aim.        </h1>
 }
 
 .cta-primary {
-  background: #f3f26b;
+  background: #ffff00;
   color: #121212;
 }
 
