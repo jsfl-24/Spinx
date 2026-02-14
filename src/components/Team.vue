@@ -44,10 +44,6 @@ onMounted(() => {
             />
             <h3 class="team-name">Alex Johnson</h3>
             <p class="team-role">Founder & CEO</p>
-            <p class="team-bio">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Passionate about decentralized systems.
-            </p>
           </div>
 
           <div class="team-card">
@@ -58,10 +54,6 @@ onMounted(() => {
             />
             <h3 class="team-name">Sarah Chen</h3>
             <p class="team-role">CTO</p>
-            <p class="team-bio">
-              Ut labore et dolore magna aliqua. Expert in blockchain
-              architecture and protocol design.
-            </p>
           </div>
 
           <div class="team-card">
@@ -72,10 +64,6 @@ onMounted(() => {
             />
             <h3 class="team-name">Marcus Lee</h3>
             <p class="team-role">Head of Design</p>
-            <p class="team-bio">
-              Sed do eiusmod tempor incididunt. Focused on creating beautiful
-              and intuitive experiences.
-            </p>
           </div>
 
           <div class="team-card">
@@ -86,10 +74,6 @@ onMounted(() => {
             />
             <h3 class="team-name">Lisa Rodriguez</h3>
             <p class="team-role">Operations Lead</p>
-            <p class="team-bio">
-              Quis nostrud exercitation ullamco laboris. Driving strategic
-              partnerships and growth.
-            </p>
           </div>
 
           <div class="team-card">
@@ -100,10 +84,6 @@ onMounted(() => {
             />
             <h3 class="team-name">James Park</h3>
             <p class="team-role">Protocol Engineer</p>
-            <p class="team-bio">
-              Nisi ut aliquip ex ea commodo. Architecting next-generation
-              blockchain infrastructure.
-            </p>
           </div>
 
           <div class="team-card">
@@ -114,10 +94,6 @@ onMounted(() => {
             />
             <h3 class="team-name">Emma Stone</h3>
             <p class="team-role">Research Lead</p>
-            <p class="team-bio">
-              Consequat duis aute irure dolor. Pioneering new approaches to
-              consensus and security.
-            </p>
           </div>
 
           <div class="team-card">
@@ -128,10 +104,6 @@ onMounted(() => {
             />
             <h3 class="team-name">Michael Torres</h3>
             <p class="team-role">Lead Developer</p>
-            <p class="team-bio">
-              Lorem ipsum dolor sit amet. Building scalable infrastructure and
-              optimizing performance.
-            </p>
           </div>
 
           <div class="team-card">
@@ -142,10 +114,6 @@ onMounted(() => {
             />
             <h3 class="team-name">Jessica Park</h3>
             <p class="team-role">Product Manager</p>
-            <p class="team-bio">
-              Sed do eiusmod tempor incididunt. Focused on delivering
-              exceptional product experiences.
-            </p>
           </div>
         </div>
       </div>
@@ -262,12 +230,6 @@ onMounted(() => {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: #f3f26b;
-}
-
-.team-bio {
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.9rem;
-  line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
