@@ -137,9 +137,11 @@ onMounted(() => {
       </div>
     </nav>
 
-    <div class="hero-content mx-auto max-w-6xl px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-10">
-        <div class="hidden lg:flex flex-col gap-10 justify-center">
+    <div class="hero-content mx-auto max-w-6xl px-6 w-full">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 w-full"
+      >
+        <div class="flex flex-col gap-6 lg:gap-10 justify-center md:order-1">
           <div class="hero-stat">
             <p class="stat-value">360+</p>
             <p class="stat-label">Total TBCs</p>
@@ -151,18 +153,20 @@ onMounted(() => {
             <span class="stat-line" />
           </div>
         </div>
+        <div
+          class="text-center flex flex-col justify-center md:col-span-2 lg:col-span-1 md:order-3 lg:order-2"
+        >
+          <p class="hero-kicker"></p>
+          <h1 class="hero-title">SpinX 360</h1>
 
-        <div class="text-center flex flex-col justify-center">
-          <p class="hero-kicker">SpinX Network, a family of on-chain apps</p>
-          <h1 class="hero-title">
-            SpinX Protocol powers on-chain consumer apps
-          </h1>
           <p class="hero-sub">
             Build utility-first experiences with a seamless protocol layer and a
             community-first incentive engine.
           </p>
 
-          <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          <div
+            class="mt-8 lg:mt-10 flex flex-col sm:flex-row justify-center gap-4"
+          >
             <button class="hero-cta hero-cta-primary">
               Start building in 3 steps
             </button>
@@ -172,13 +176,15 @@ onMounted(() => {
           </div>
         </div>
 
-        <div class="hidden lg:flex flex-col gap-10 justify-center items-end">
-          <div class="hero-stat text-right">
+        <div
+          class="flex flex-col gap-6 lg:gap-10 justify-center items-start md:items-end md:order-2 lg:order-3"
+        >
+          <div class="hero-stat text-left md:text-right">
             <p class="stat-value">297M</p>
             <p class="stat-label">RLY Rewards Distributed</p>
             <span class="stat-line" />
           </div>
-          <div class="hero-stat text-right">
+          <div class="hero-stat text-left md:text-right">
             <p class="stat-value">258M</p>
             <p class="stat-label">Total Value Locked in RLY</p>
             <span class="stat-line" />
@@ -426,6 +432,10 @@ onMounted(() => {
   background: rgba(255, 255, 255, 0.3);
 }
 
+.text-right .stat-line {
+  margin-left: auto;
+}
+
 .scroll-text {
   font-size: 0.65rem;
   letter-spacing: 0.3em;
@@ -482,10 +492,16 @@ onMounted(() => {
   }
 }
 
+@media (max-width: 1024px) {
+  .hero-content > .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content {
-    padding-top: 110px;
-    padding-bottom: 80px;
+    padding-top: 100px;
+    padding-bottom: 60px;
   }
 
   .nav-rail {
@@ -508,6 +524,14 @@ onMounted(() => {
 
   .hero-sub {
     font-size: 0.9rem;
+  }
+
+  .hero-stat {
+    gap: 4px;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
   }
 }
 
@@ -536,6 +560,11 @@ onMounted(() => {
     padding: 8px 14px;
   }
 
+  .hero-content {
+    padding-top: 90px;
+    padding-bottom: 50px;
+  }
+
   .hero-cta {
     width: 100%;
     font-size: 0.65rem;
@@ -544,6 +573,15 @@ onMounted(() => {
 
   .scroll-text {
     font-size: 0.55rem;
+  }
+
+  .hero-title {
+    margin-top: 0.8rem;
+  }
+
+  .hero-sub {
+    margin-top: 1rem;
+    font-size: 0.85rem;
   }
 }
 
