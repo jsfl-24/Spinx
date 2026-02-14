@@ -59,6 +59,41 @@ const galleryImages: GalleryImage[] = [
 ];
 
 const isPaused = ref(false);
+const carouselTrack = ref<HTMLElement | null>(null);
+const currentIndex = ref(0);
+
+const navigateCarousel = (direction: "next" | "prev") => {
+  if (!carouselTrack.value) return;
+
+  const itemWidth =
+    carouselTrack.value.querySelector(".carousel-item")?.clientWidth || 0;
+  const gap = 20;
+  const scrollAmount = itemWidth + gap;
+
+  if (direction === "next") {
+    currentIndex.value++;
+  } else {
+    currentIndex.value--;
+  }
+
+  // Pause animation temporarily
+  isPaused.value = true;
+
+  // Apply transform
+  const translateX = -(currentIndex.value * scrollAmount);
+  carouselTrack.value.style.transform = `translateX(${translateX}px)`;
+  carouselTrack.value.style.animation = "none";
+
+  // Resume auto-scroll after 3 seconds
+  setTimeout(() => {
+    if (carouselTrack.value) {
+      carouselTrack.value.style.animation = "";
+      carouselTrack.value.style.transform = "";
+      currentIndex.value = 0;
+      isPaused.value = false;
+    }
+  }, 3000);
+};
 
 onMounted(() => {
   gsap.from(".gallery-title", {
@@ -107,12 +142,32 @@ onMounted(() => {
 
       <!-- Carousel -->
       <div class="gallery-carousel-wrapper">
+        <!-- Navigation Buttons -->
+        <button
+          class="carousel-nav carousel-nav-prev"
+          @click="navigateCarousel('prev')"
+          aria-label="Previous image"
+        >
+          ←
+        </button>
+        <button
+          class="carousel-nav carousel-nav-next"
+          @click="navigateCarousel('next')"
+          aria-label="Next image"
+        >
+          →
+        </button>
+
         <div
           class="gallery-carousel"
           @mouseenter="isPaused = true"
           @mouseleave="isPaused = false"
         >
-          <div class="carousel-track" :class="{ paused: isPaused }">
+          <div
+            ref="carouselTrack"
+            class="carousel-track"
+            :class="{ paused: isPaused }"
+          >
             <div
               v-for="(image, index) in [
                 ...galleryImages,
@@ -257,6 +312,41 @@ onMounted(() => {
   min-width: 0;
 }
 
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-nav:hover {
+  border-color: rgba(243, 242, 107, 0.8);
+  color: #f3f26b;
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-prev {
+  left: -70px;
+}
+
+.carousel-nav-next {
+  right: -70px;
+}
+
 .image-card {
   position: relative;
   width: 100%;
@@ -317,6 +407,20 @@ onMounted(() => {
 }
 
 @media (max-width: 1024px) {
+  .carousel-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  .carousel-nav-prev {
+    left: -60px;
+  }
+
+  .carousel-nav-next {
+    right: -60px;
+  }
+
   .orbit-lg {
     width: 700px;
     height: 700px;
@@ -334,6 +438,20 @@ onMounted(() => {
 }
 
 @media (max-width: 640px) {
+  .carousel-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .carousel-nav-prev {
+    left: -50px;
+  }
+
+  .carousel-nav-next {
+    right: -50px;
+  }
+
   .overlay-title {
     font-size: 0.9rem;
   }
