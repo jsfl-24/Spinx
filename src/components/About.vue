@@ -64,13 +64,11 @@ onMounted(() => {
     <!-- Hero Section -->
     <div class="about-inner relative z-10">
       <div class="about-hero-sec text-center mb-32">
-        <p class="about-kicker">Our Story</p>
+        <p class="about-kicker">About Us</p>
         <h1 class="about-hero-title">
-          Building the future of community-driven technology
-        </h1>
+Our Aim.        </h1>
         <p class="about-hero-sub">
-          We believe in the power of decentralized networks and community-first
-          innovation to create meaningful impact.
+          Empowering future drone enthusiasts through hands-on learning and real-world experience.
         </p>
       </div>
 

@@ -166,13 +166,13 @@ onMounted(() => {
       >
         <div class="flex flex-col gap-6 lg:gap-10 justify-center md:order-1">
           <div class="hero-stat">
-            <p class="stat-value">360</p>
-            <p class="stat-label">Total TBCs</p>
+            <p class="stat-value">20+</p>
+            <p class="stat-label">Workshops Conducted</p>
             <span class="stat-line" />
           </div>
           <div class="hero-stat">
-            <p class="stat-value">40+</p>
-            <p class="stat-label">Network Transactions</p>
+            <p class="stat-value">50+</p>
+            <p class="stat-label">Internships</p>
             <span class="stat-line" />
           </div>
         </div>
@@ -183,15 +183,14 @@ onMounted(() => {
           <h1 class="hero-title">SpinX 360</h1>
 
           <p class="hero-sub">
-            Build utility-first experiences with a seamless protocol layer and a
-            community-first incentive engine.
+            Learn-Build-Innovate.
           </p>
 
           <div
             class="mt-8 lg:mt-10 flex flex-col sm:flex-row justify-center gap-4"
           >
             <button class="hero-cta hero-cta-primary">
-              Start building in 3 steps
+              <a href="#contact">Connect with us</a>
             </button>
             <button class="hero-cta hero-cta-ghost hidden">
               Read the documentation
@@ -203,13 +202,13 @@ onMounted(() => {
           class="flex flex-col gap-6 lg:gap-10 justify-center items-start md:items-end md:order-2 lg:order-3"
         >
           <div class="hero-stat text-left md:text-right">
-            <p class="stat-value">297</p>
-            <p class="stat-label">RLY Rewards Distributed</p>
+            <p class="stat-value">20+</p>
+            <p class="stat-label">Drones</p>
             <span class="stat-line" />
           </div>
           <div class="hero-stat text-left md:text-right">
-            <p class="stat-value">258</p>
-            <p class="stat-label">Total Value Locked in RLY</p>
+            <p class="stat-value">1 year +</p>
+            <p class="stat-label">Experience in Drone Technology</p>
             <span class="stat-line" />
           </div>
         </div>

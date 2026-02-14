@@ -15,8 +15,9 @@
             <span class="brand-name">SpinX 360</span>
           </div>
           <p class="brand-copy">
-            A community-first protocol powering consumer apps with seamless
-            incentives and reliable infrastructure.
+            SpinX360 is committed to empowering individuals and institutions by
+            delivering practical, industry-ready drone training and hands-on
+            learning experiences.
           </p>
         </div>
 
@@ -49,9 +50,11 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-meta">2026 SpinX Network. All rights reserved.</p>
+        <p class="footer-meta">2026 SpinX 360. All rights reserved.</p>
         <div class="social-row">
-          <a class="social-pill" href="#">Discord</a>
+          <a class="social-pill" href="https://www.instagram.com/spinx360"
+            >Instagram</a
+          >
           <a class="social-pill" href="#">YouTube</a>
           <a class="social-pill" href="#">LinkedIn</a>
           <a class="social-pill" href="#">Twitter</a>
