@@ -69,6 +69,39 @@ onMounted(() => {
     duration: 0.7,
     delay: 0.2,
   });
+
+  // Count animation for stat values
+  const statElements = document.querySelectorAll(".stat-value");
+  statElements.forEach((element) => {
+    const text = element.textContent.trim();
+    let targetValue = 0;
+    let suffix = "";
+
+    if (text === "360+") {
+      targetValue = 360;
+      suffix = "+";
+    } else if (text === "40M+") {
+      targetValue = 40;
+      suffix = "M+";
+    } else if (text === "297M") {
+      targetValue = 297;
+      suffix = "M";
+    } else if (text === "258M") {
+      targetValue = 258;
+      suffix = "M";
+    }
+
+    gsap.from(element, {
+      innerText: 0,
+      duration: 1.2,
+      snap: { innerText: 1 },
+      onUpdate() {
+        element.innerText = Math.floor(parseFloat(element.innerText)) + suffix;
+      },
+      delay: 1.2,
+      ease: "power2.out",
+    });
+  });
 });
 </script>
 
@@ -143,12 +176,12 @@ onMounted(() => {
       >
         <div class="flex flex-col gap-6 lg:gap-10 justify-center md:order-1">
           <div class="hero-stat">
-            <p class="stat-value">360+</p>
+            <p class="stat-value">360</p>
             <p class="stat-label">Total TBCs</p>
             <span class="stat-line" />
           </div>
           <div class="hero-stat">
-            <p class="stat-value">40M+</p>
+            <p class="stat-value">40+</p>
             <p class="stat-label">Network Transactions</p>
             <span class="stat-line" />
           </div>
@@ -180,12 +213,12 @@ onMounted(() => {
           class="flex flex-col gap-6 lg:gap-10 justify-center items-start md:items-end md:order-2 lg:order-3"
         >
           <div class="hero-stat text-left md:text-right">
-            <p class="stat-value">297M</p>
+            <p class="stat-value">297</p>
             <p class="stat-label">RLY Rewards Distributed</p>
             <span class="stat-line" />
           </div>
           <div class="hero-stat text-left md:text-right">
-            <p class="stat-value">258M</p>
+            <p class="stat-value">258</p>
             <p class="stat-label">Total Value Locked in RLY</p>
             <span class="stat-line" />
           </div>
