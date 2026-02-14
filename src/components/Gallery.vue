@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { onMounted, onBeforeUnmount, ref } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -58,48 +58,38 @@ const galleryImages: GalleryImage[] = [
   },
 ];
 
-const currentIndex = ref(0);
-const itemsPerView = ref(3);
+const carouselRef = ref<HTMLDivElement | null>(null);
+const isPaused = ref(false);
+const scrollSpeed = 20;
+let rafId = 0;
 
-const updateItemsPerView = () => {
-  if (window.innerWidth < 640) {
-    itemsPerView.value = 1;
-  } else if (window.innerWidth < 1024) {
-    itemsPerView.value = 2;
-  } else {
-    itemsPerView.value = 3;
+const loopScroll = () => {
+  if (!carouselRef.value) {
+    rafId = requestAnimationFrame(loopScroll);
+    return;
   }
+
+  if (!isPaused.value) {
+    const viewport = carouselRef.value;
+    const maxScroll = viewport.scrollWidth / 2;
+    viewport.scrollLeft += scrollSpeed;
+    if (viewport.scrollLeft >= maxScroll) {
+      viewport.scrollLeft = 0;
+    }
+  }
+
+  rafId = requestAnimationFrame(loopScroll);
 };
 
-const visibleImages = computed(() => {
-  const end = currentIndex.value + itemsPerView.value;
-  return galleryImages.slice(currentIndex.value, end);
-});
-
-const canGoNext = computed(() => {
-  return currentIndex.value + itemsPerView.value < galleryImages.length;
-});
-
-const canGoPrev = computed(() => {
-  return currentIndex.value > 0;
-});
-
-const nextSlide = () => {
-  if (canGoNext.value) {
-    currentIndex.value += 1;
-  }
-};
-
-const prevSlide = () => {
-  if (canGoPrev.value) {
-    currentIndex.value -= 1;
-  }
+const scrollByAmount = (direction: "next" | "prev") => {
+  if (!carouselRef.value) return;
+  const viewport = carouselRef.value;
+  const amount = Math.max(260, Math.round(viewport.clientWidth * 0.55));
+  const delta = direction === "next" ? amount : -amount;
+  viewport.scrollBy({ left: delta, behavior: "smooth" });
 };
 
 onMounted(() => {
-  updateItemsPerView();
-  window.addEventListener("resize", updateItemsPerView);
-
   gsap.from(".gallery-title", {
     scrollTrigger: {
       trigger: ".gallery-section",
@@ -121,16 +111,21 @@ onMounted(() => {
     duration: 0.8,
   });
 
-  return () => {
-    window.removeEventListener("resize", updateItemsPerView);
-  };
+  rafId = requestAnimationFrame(loopScroll);
 });
 
-import { onMounted } from "vue";
+onBeforeUnmount(() => {
+  if (rafId) {
+    cancelAnimationFrame(rafId);
+  }
+});
 </script>
 
 <template>
-  <section class="gallery-section relative w-full overflow-hidden py-24">
+  <section
+    id="gallery"
+    class="gallery-section relative w-full overflow-hidden py-24"
+  >
     <div class="gallery-bg absolute inset-0" />
     <div class="gallery-orbits absolute inset-0 pointer-events-none">
       <span class="orbit orbit-lg" />
@@ -149,11 +144,18 @@ import { onMounted } from "vue";
 
       <!-- Carousel -->
       <div class="gallery-carousel-wrapper">
-        <div class="gallery-carousel">
+        <div
+          class="gallery-carousel"
+          ref="carouselRef"
+          @mouseenter="isPaused = true"
+          @mouseleave="isPaused = false"
+          @focusin="isPaused = true"
+          @focusout="isPaused = false"
+        >
           <div class="carousel-track">
             <div
-              v-for="image in visibleImages"
-              :key="image.id"
+              v-for="image in [...galleryImages, ...galleryImages]"
+              :key="`${image.id}-${image.event}`"
               class="carousel-item"
             >
               <div class="image-card">
@@ -169,33 +171,22 @@ import { onMounted } from "vue";
           </div>
         </div>
 
-        <!-- Navigation -->
-        <button
-          class="carousel-nav carousel-prev"
-          :disabled="!canGoPrev"
-          @click="prevSlide"
-          aria-label="Previous"
-        >
-          ←
-        </button>
-        <button
-          class="carousel-nav carousel-next"
-          :disabled="!canGoNext"
-          @click="nextSlide"
-          aria-label="Next"
-        >
-          →
-        </button>
-      </div>
-
-      <!-- Indicators -->
-      <div class="carousel-indicators">
-        <span
-          v-for="i in Math.ceil(galleryImages.length / itemsPerView)"
-          :key="i"
-          class="indicator"
-          :class="{ active: i - 1 === Math.floor(currentIndex / itemsPerView) }"
-        />
+        <div class="carousel-controls">
+          <button
+            class="carousel-nav"
+            @click="scrollByAmount('prev')"
+            aria-label="Scroll left"
+          >
+            ←
+          </button>
+          <button
+            class="carousel-nav"
+            @click="scrollByAmount('next')"
+            aria-label="Scroll right"
+          >
+            →
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -209,8 +200,17 @@ import { onMounted } from "vue";
 }
 
 .gallery-bg {
-  background: radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.08), transparent 55%),
-    radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.05), transparent 60%);
+  background:
+    radial-gradient(
+      circle at 60% 30%,
+      rgba(255, 255, 255, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(255, 255, 255, 0.05),
+      transparent 60%
+    );
   opacity: 0.7;
 }
 
@@ -279,17 +279,20 @@ import { onMounted } from "vue";
 
 .gallery-carousel {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 140px/36px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.35);
+  scroll-behavior: smooth;
 }
 
 .carousel-track {
   display: flex;
   gap: 20px;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 18px 22px;
 }
 
 .carousel-item {
-  flex: 1;
+  flex: 0 0 clamp(240px, 32vw, 380px);
   min-width: 0;
 }
 
@@ -308,7 +311,7 @@ import { onMounted } from "vue";
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
-  transition: filter 0.4s ease;
+  transition: filter 0.35s ease;
 }
 
 .image-card:hover .gallery-img {
@@ -352,60 +355,30 @@ import { onMounted } from "vue";
   letter-spacing: 0.08em;
 }
 
+.carousel-controls {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
 .carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 44px;
   height: 44px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border-radius: 999px;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  z-index: 10;
 }
 
-.carousel-nav:hover:not(:disabled) {
+.carousel-nav:hover {
   border-color: rgba(243, 242, 107, 0.7);
   color: #f3f26b;
   background: rgba(0, 0, 0, 0.7);
-}
-
-.carousel-nav:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.carousel-prev {
-  left: 12px;
-}
-
-.carousel-next {
-  right: 12px;
-}
-
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-
-.indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  width: 24px;
-  background: #f3f26b;
 }
 
 @media (max-width: 1024px) {
@@ -435,14 +408,6 @@ import { onMounted } from "vue";
     width: 36px;
     height: 36px;
     font-size: 1rem;
-  }
-
-  .carousel-prev {
-    left: 8px;
-  }
-
-  .carousel-next {
-    right: 8px;
   }
 
   .overlay-title {

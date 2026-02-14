@@ -73,7 +73,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="hero relative w-full min-h-screen overflow-hidden">
+  <section id="home" class="hero relative w-full min-h-screen overflow-hidden">
     <div class="hero-bg absolute inset-0" />
 
     <div class="hero-lines absolute inset-0 pointer-events-none">
@@ -96,14 +96,10 @@ onMounted(() => {
           </router-link>
 
           <div class="hidden md:flex items-center gap-8 text-xs uppercase">
-            <router-link to="/" class="nav-link">Home</router-link>
-            <router-link to="/services" class="nav-link">
-              Services
-            </router-link>
-            <router-link to="/gallery" class="nav-link"> Gallery </router-link>
-            <router-link to="/about" class="nav-link">About</router-link>
-            <router-link to="/news" class="nav-link">News</router-link>
-            <router-link to="/contact" class="nav-link">Contact</router-link>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#contact" class="nav-link">Contact</a>
           </div>
 
           <button
@@ -121,36 +117,18 @@ onMounted(() => {
         <div class="nav-divider" />
 
         <div v-show="isMobileMenuOpen" class="mobile-menu md:hidden">
-          <router-link to="/" class="mobile-link" @click="closeMobileMenu">
+          <a href="#home" class="mobile-link" @click="closeMobileMenu">
             Home
-          </router-link>
-          <router-link
-            to="/services"
-            class="mobile-link"
-            @click="closeMobileMenu"
-          >
-            Services
-          </router-link>
-          <router-link
-            to="/gallery"
-            class="mobile-link"
-            @click="closeMobileMenu"
-          >
-            Gallery
-          </router-link>
-          <router-link to="/about" class="mobile-link" @click="closeMobileMenu">
+          </a>
+          <a href="#about" class="mobile-link" @click="closeMobileMenu">
             About
-          </router-link>
-          <router-link to="/news" class="mobile-link" @click="closeMobileMenu">
-            News
-          </router-link>
-          <router-link
-            to="/contact"
-            class="mobile-link"
-            @click="closeMobileMenu"
-          >
+          </a>
+          <a href="#gallery" class="mobile-link" @click="closeMobileMenu">
+            Gallery
+          </a>
+          <a href="#contact" class="mobile-link" @click="closeMobileMenu">
             Contact
-          </router-link>
+          </a>
         </div>
       </div>
     </nav>

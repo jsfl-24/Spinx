@@ -66,7 +66,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="about relative w-full overflow-hidden py-24">
+  <section id="about" class="about relative w-full overflow-hidden py-24">
     <div class="about-bg absolute inset-0" />
     <div class="about-orbits absolute inset-0 pointer-events-none">
       <span class="orbit orbit-lg" />

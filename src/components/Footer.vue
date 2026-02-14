@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer relative overflow-hidden">
+  <footer id="contact" class="footer relative overflow-hidden">
     <div class="footer-bg" />
     <div class="footer-orbits">
       <span class="orbit orbit-lg" />
