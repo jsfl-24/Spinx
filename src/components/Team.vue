@@ -34,7 +34,7 @@ onMounted(() => {
       <div id="team" class="team-section">
         <h2 class="section-title">Meet the Team</h2>
         <div
-          class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          class="team-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           <div class="team-card">
             <img
@@ -216,6 +216,12 @@ onMounted(() => {
   transition: filter 0.4s ease;
 }
 
+@media (max-width: 768px) {
+  .team-avatar {
+    height: 200px;
+  }
+}
+
 .team-card:hover .team-avatar {
   filter: grayscale(0%);
 }
@@ -259,8 +265,25 @@ onMounted(() => {
     margin-bottom: 20px;
   }
 
+  .team-grid {
+    gap: 12px;
+  }
+
   .team-card {
-    padding: 18px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .team-avatar {
+    height: 140px;
+  }
+
+  .team-name {
+    font-size: 0.85rem;
+  }
+
+  .team-role {
+    font-size: 0.65rem;
   }
 
   .orbit-lg {
