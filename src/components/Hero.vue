@@ -73,33 +73,23 @@ onMounted(() => {
   // Count animation for stat values
   const statElements = document.querySelectorAll(".stat-value");
   statElements.forEach((element) => {
-    const text = element.textContent.trim();
-    let targetValue = 0;
-    let suffix = "";
+    const originalText = (element as HTMLElement).textContent?.trim() || "";
+    const numberMatch = originalText.match(/(\d+)/);
+    const targetValue = numberMatch ? parseInt(numberMatch[0]) : 0;
+    const suffix = originalText.replace(/\d+/g, "");
 
-    if (text === "360+") {
-      targetValue = 360;
-      suffix = "+";
-    } else if (text === "40M+") {
-      targetValue = 40;
-      suffix = "M+";
-    } else if (text === "297M") {
-      targetValue = 297;
-      suffix = "M";
-    } else if (text === "258M") {
-      targetValue = 258;
-      suffix = "M";
-    }
-
-    gsap.from(element, {
-      innerText: 0,
+    gsap.to(element, {
+      textContent: targetValue,
       duration: 1.2,
-      snap: { innerText: 1 },
-      onUpdate() {
-        element.innerText = Math.floor(parseFloat(element.innerText)) + suffix;
-      },
+      snap: { textContent: 1 },
       delay: 1.2,
       ease: "power2.out",
+      onUpdate() {
+        const currentValue = Math.floor(
+          parseFloat((element as HTMLElement).textContent || "0"),
+        );
+        (element as HTMLElement).textContent = currentValue + suffix;
+      },
     });
   });
 });
@@ -431,7 +421,7 @@ onMounted(() => {
 }
 
 .hero-cta-primary {
-  background: #f3f26b;
+  background: #ffff00;
   color: #121212;
 }
 
