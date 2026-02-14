@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref } from "vue";
+import { onMounted, ref } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -58,41 +58,7 @@ const galleryImages: GalleryImage[] = [
   },
 ];
 
-const carouselRef = ref<HTMLDivElement | null>(null);
 const isPaused = ref(false);
-const scrollSpeed = 20;
-let rafId = 0;
-
-const loopScroll = () => {
-  if (!carouselRef.value) {
-    rafId = requestAnimationFrame(loopScroll);
-    return;
-  }
-
-  if (!isPaused.value) {
-    const viewport = carouselRef.value;
-    const maxScroll = viewport.scrollWidth / 2;
-    viewport.scrollLeft = (viewport.scrollLeft + scrollSpeed) % maxScroll;
-  }
-
-  if (carouselRef.value) {
-    const viewport = carouselRef.value;
-    const maxScroll = viewport.scrollWidth / 2;
-    if (viewport.scrollLeft < 0) {
-      viewport.scrollLeft += maxScroll;
-    }
-  }
-
-  rafId = requestAnimationFrame(loopScroll);
-};
-
-const scrollByAmount = (direction: "next" | "prev") => {
-  if (!carouselRef.value) return;
-  const viewport = carouselRef.value;
-  const amount = Math.max(260, Math.round(viewport.clientWidth * 0.55));
-  const delta = direction === "next" ? amount : -amount;
-  viewport.scrollBy({ left: delta, behavior: "smooth" });
-};
 
 onMounted(() => {
   gsap.from(".gallery-title", {
@@ -115,14 +81,6 @@ onMounted(() => {
     opacity: 0,
     duration: 0.8,
   });
-
-  rafId = requestAnimationFrame(loopScroll);
-});
-
-onBeforeUnmount(() => {
-  if (rafId) {
-    cancelAnimationFrame(rafId);
-  }
 });
 </script>
 
@@ -151,16 +109,17 @@ onBeforeUnmount(() => {
       <div class="gallery-carousel-wrapper">
         <div
           class="gallery-carousel"
-          ref="carouselRef"
           @mouseenter="isPaused = true"
           @mouseleave="isPaused = false"
-          @focusin="isPaused = true"
-          @focusout="isPaused = false"
         >
-          <div class="carousel-track">
+          <div class="carousel-track" :class="{ paused: isPaused }">
             <div
-              v-for="image in [...galleryImages, ...galleryImages]"
-              :key="`${image.id}-${image.event}`"
+              v-for="(image, index) in [
+                ...galleryImages,
+                ...galleryImages,
+                ...galleryImages,
+              ]"
+              :key="`${image.id}-${index}`"
               class="carousel-item"
             >
               <div class="image-card">
@@ -174,23 +133,6 @@ onBeforeUnmount(() => {
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="carousel-controls">
-          <button
-            class="carousel-nav"
-            @click="scrollByAmount('prev')"
-            aria-label="Scroll left"
-          >
-            ←
-          </button>
-          <button
-            class="carousel-nav"
-            @click="scrollByAmount('next')"
-            aria-label="Scroll right"
-          >
-            →
-          </button>
         </div>
       </div>
     </div>
@@ -287,13 +229,27 @@ onBeforeUnmount(() => {
   border-radius: 140px/36px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(0, 0, 0, 0.35);
-  scroll-behavior: smooth;
 }
 
 .carousel-track {
   display: flex;
   gap: 20px;
   padding: 18px 22px;
+  animation: scroll-left 40s linear infinite;
+  width: max-content;
+}
+
+.carousel-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
 }
 
 .carousel-item {
@@ -360,38 +316,7 @@ onBeforeUnmount(() => {
   letter-spacing: 0.08em;
 }
 
-.carousel-controls {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-}
-
-.carousel-nav {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.carousel-nav:hover {
-  border-color: rgba(243, 242, 107, 0.7);
-  color: #f3f26b;
-  background: rgba(0, 0, 0, 0.7);
-}
-
 @media (max-width: 1024px) {
-  .carousel-nav {
-    width: 40px;
-    height: 40px;
-  }
-
   .orbit-lg {
     width: 700px;
     height: 700px;
@@ -409,12 +334,6 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 640px) {
-  .carousel-nav {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-
   .overlay-title {
     font-size: 0.9rem;
   }
