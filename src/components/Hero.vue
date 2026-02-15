@@ -441,28 +441,50 @@ onMounted(() => {
   flex-direction: column;
   gap: 6px;
   color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
 }
 
 .stat-value {
   font-size: 1.5rem;
   letter-spacing: 0.12em;
   color: #f5f5f5;
+  transition: color 0.3s ease;
+}
+
+.hero-stat:hover .stat-value {
+  color: #ffff00;
 }
 
 .stat-label {
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.hero-stat:hover .stat-label {
+  color: #ffff00;
 }
 
 .stat-line {
   width: 46px;
   height: 1px;
   background: rgba(255, 255, 255, 0.3);
+  transition: background 0.3s ease;
+}
+
+.hero-stat:hover .stat-line {
+  background: #ffff00;
 }
 
 .text-right .stat-line {
   margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .text-left.md\:text-right .stat-line {
+    margin-left: auto;
+  }
 }
 
 .scroll-text {
