@@ -21,32 +21,28 @@
           </p>
         </div>
 
-        <!--<div class="link-grid">
-          <div class="link-col">
-            <p class="link-title">Products</p>
-            <a class="link-item" href="#">Protocol</a>
-            <a class="link-item" href="#">Developer Console</a>
-            <a class="link-item" href="#">Network Status</a>
+        <div class="contact-info">
+          <p class="contact-title">Get in Touch</p>
+          <div class="contact-items">
+            <div class="contact-group">
+              <a class="contact-item" href="tel:+919544944243">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+91 9544944243</span>
+              </a>
+              <a class="contact-item" href="mailto:spinx.mediate@gmail.com">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">spinx.mediate@gmail.com</span>
+              </a>
+            </div>
+            <a class="contact-item" href="https://maps.app.goo.gl/ENSwvhJbLGAVxcdr7">
+              <span class="contact-label">Address</span>
+              <span class="contact-value"
+                >Universal Engineering College<br />Vellangallur - Mathilakam
+                Rd, Irinjalakuda,<br />Thrissur, Kerala 680123</span
+              >
+            </a>
           </div>
-          <div class="link-col">
-            <p class="link-title">Resources</p>
-            <a class="link-item" href="#">Documentation</a>
-            <a class="link-item" href="#">Guides</a>
-            <a class="link-item" href="#">SDK Downloads</a>
-          </div>
-          <div class="link-col">
-            <p class="link-title">Community</p>
-            <a class="link-item" href="#">Forum</a>
-            <a class="link-item" href="#">Events</a>
-            <a class="link-item" href="#">Ambassadors</a>
-          </div>
-          <div class="link-col">
-            <p class="link-title">Company</p>
-            <a class="link-item" href="#">About</a>
-            <a class="link-item" href="#">Careers</a>
-            <a class="link-item" href="#">Press</a>
-          </div>
-        </div>-->
+        </div>
       </div>
 
       <div class="footer-bottom">
@@ -128,7 +124,7 @@
 
 .footer-top {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: 48px;
   align-items: start;
 }
@@ -162,6 +158,60 @@
   max-width: 360px;
   line-height: 1.6;
   font-size: 0.95rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.contact-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+}
+
+.contact-items {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a.contact-item:hover .contact-value {
+  color: #f3f26b;
+}
+
+.contact-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-value {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: color 0.2s ease;
 }
 
 .link-grid {
@@ -239,6 +289,16 @@
 @media (max-width: 1024px) {
   .footer-top {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-info {
+    margin-left: 0;
+  }
+
+  .contact-items {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .link-grid {
@@ -251,8 +311,17 @@
     padding: 72px 0 40px;
   }
 
+  .contact-items {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .link-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-value {
+    font-size: 0.88rem;
   }
 
   .footer-meta {
