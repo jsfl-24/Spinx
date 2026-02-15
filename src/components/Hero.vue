@@ -76,19 +76,24 @@ onMounted(() => {
     const originalText = (element as HTMLElement).textContent?.trim() || "";
     const numberMatch = originalText.match(/(\d+)/);
     const targetValue = numberMatch ? parseInt(numberMatch[0]) : 0;
-    const suffix = originalText.replace(/\d+/g, "");
+    const suffix = originalText.replace(/\d+/g, "").trim();
 
-    gsap.to(element, {
-      textContent: targetValue,
+    // Create a counter object to animate
+    const counter = { value: 0 };
+
+    gsap.to(counter, {
+      value: targetValue,
       duration: 1.2,
-      snap: { textContent: 1 },
       delay: 1.2,
       ease: "power2.out",
       onUpdate() {
-        const currentValue = Math.floor(
-          parseFloat((element as HTMLElement).textContent || "0"),
-        );
-        (element as HTMLElement).textContent = currentValue + suffix;
+        (element as HTMLElement).textContent = Math.floor(
+          counter.value,
+        ).toString();
+      },
+      onComplete() {
+        (element as HTMLElement).textContent =
+          targetValue + (suffix ? " " + suffix : "");
       },
     });
   });
@@ -110,11 +115,13 @@ onMounted(() => {
       <div class="mx-auto max-w-6xl px-6">
         <div class="nav-rail flex items-center justify-between">
           <router-link to="/" class="hero-brand flex items-center gap-3">
-            <img
-              src="/SpinX_Logo.png"
-              alt="SpinX"
-              class="h-7 w-7 object-contain"
-            />
+            <a href="#home">
+              <img
+                src="/SpinX_Logo.png"
+                alt="SpinX"
+                class="h-7 w-7 object-contain"
+              />
+            </a>
             <span class="nav-wordmark">SpinX 360</span>
           </router-link>
 
@@ -207,7 +214,7 @@ onMounted(() => {
             <span class="stat-line" />
           </div>
           <div class="hero-stat text-left md:text-right">
-            <p class="stat-value">1 year +</p>
+            <p class="stat-value">1year +</p>
             <p class="stat-label">Experience in Drone Technology</p>
             <span class="stat-line" />
           </div>

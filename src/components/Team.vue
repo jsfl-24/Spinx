@@ -43,7 +43,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
 
           <div class="team-card">
@@ -53,7 +53,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
 
           <div class="team-card">
@@ -63,7 +63,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
 
           <div class="team-card">
@@ -73,7 +73,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
 
           <div class="team-card">
@@ -83,7 +83,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
 
           <div class="team-card">
@@ -93,7 +93,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
 
           <div class="team-card">
@@ -103,7 +103,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
 
           <div class="team-card">
@@ -113,7 +113,7 @@ onMounted(() => {
               class="team-avatar"
             />
             <h3 class="team-name">Adolf Hitler</h3>
-            <p class="team-role">Founder of the Nazi Party</p>
+            <p class="team-role">Founder of SpinX360</p>
           </div>
         </div>
       </div>

@@ -49,6 +49,38 @@ onMounted(() => {
       duration: 0.8,
     });
   });
+
+  // Count animation for stat numbers
+  const statNumbers = document.querySelectorAll(".stat-number");
+  statNumbers.forEach((element) => {
+    const originalText = (element as HTMLElement).textContent?.trim() || "";
+    const numberMatch = originalText.match(/(\d+)/);
+    const targetValue = numberMatch ? parseInt(numberMatch[0]) : 0;
+    const suffix = originalText.replace(/\d+/g, "").trim();
+
+    // Create a counter object to animate
+    const counter = { value: 0 };
+
+    gsap.to(counter, {
+      value: targetValue,
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      onUpdate() {
+        (element as HTMLElement).textContent = Math.floor(
+          counter.value,
+        ).toString();
+      },
+      onComplete() {
+        (element as HTMLElement).textContent =
+          targetValue + (suffix ? " " + suffix : "");
+      },
+    });
+  });
 });
 </script>
 
@@ -65,10 +97,10 @@ onMounted(() => {
     <div class="about-inner relative z-10">
       <div class="about-hero-sec text-center mb-32">
         <p class="about-kicker">About Us</p>
-        <h1 class="about-hero-title">
-Our Aim.        </h1>
+        <h1 class="about-hero-title">Our Aim.</h1>
         <p class="about-hero-sub">
-          Empowering future drone enthusiasts through hands-on learning and real-world experience.
+          Empowering future drone enthusiasts through hands-on learning and
+          real-world experience.
         </p>
       </div>
 
@@ -161,7 +193,7 @@ Our Aim.        </h1>
       <div class="stats-section mb-32">
         <div class="stats-grid grid grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="stat-block">
-            <p class="stat-number">50+</p>
+            <p class="stat-number">250+</p>
             <p class="stat-name">Active Interns</p>
             <span class="stat-underline" />
           </div>
