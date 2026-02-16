@@ -41,7 +41,7 @@ onMounted(() => {
           >
             <div class="team-card">
               <img
-                src="https://i.pinimg.com/736x/2f/ca/40/2fca40121664fc6a6ea9b25e920ce1b8.jpg"
+                src="https://picsum.photos/400/500?random=14"
                 alt="Diya El Fadhil"
                 class="team-avatar"
               />
@@ -50,7 +50,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://cdn.britannica.com/09/117709-050-14F8F41D/Mother-Teresa-of-Calcutta-1975.jpg"
+                src="https://picsum.photos/400/500?random=14"
                 alt="Nehna"
                 class="team-avatar"
               />
@@ -76,7 +76,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="data:image/jpeg;base64,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"
+                src="https://picsum.photos/400/500?random=14"
                 alt="Joise"
                 class="team-avatar"
               />
@@ -85,7 +85,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://i.ytimg.com/vi/_lc9iTNtw3s/hqdefault.jpg"
+                src="https://picsum.photos/400/500?random=15"
                 alt="Tony"
                 class="team-avatar"
               />
@@ -120,7 +120,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://imagesvs.oneindia.com/ml/img/2015/06/26-1435297330-amrutha8.jpg"
+                src="https://picsum.photos/400/500?random=16"
                 alt="Neha"
                 class="team-avatar"
               />
@@ -129,7 +129,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://static0.srcdn.com/wordpress/wp-content/uploads/2021/02/Rick-Astley-Never-Gonna-Give-You-Up-Remastered-Header.jpg?w=1200&h=900&fit=crop"
+                src="https://picsum.photos/400/500?random=16"
                 alt="Athif"
                 class="team-avatar"
               />
@@ -146,7 +146,7 @@ onMounted(() => {
           >
             <div class="team-card">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEP_CYaOSYmVyBE29Mi-dZvA0EF7cvHx12hxiv83_WlAlmuGo03u0XbhZuaX8qJEpnbNQ&usqp=CAU"
+                src="https://picsum.photos/400/500?random=17"
                 alt="Aswin"
                 class="team-avatar"
               />
@@ -155,7 +155,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://image.tmdb.org/t/p/original/lgyhDfIJSrh2UQc8mx3LyDYLZv1.jpg"
+                src="https://picsum.photos/400/500?random=18"
                 alt="Alin"
                 class="team-avatar"
               />
@@ -164,7 +164,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrKlBcAbAJZKueIujU8OZCyoII0Rzpwx_RuLPHHKwRM9hdnW2QkcEUh38nD3oXaSZUUic9hi83dOfGEUM4G79nKIJTWUtAWrYodldDZ4&s=10"
+                src="https://picsum.photos/400/500?random=14"
                 alt="Nihala"
                 class="team-avatar"
               />
@@ -173,7 +173,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://www.trumplibrary.gov/sites/default/files/styles/large/public/2021-01/President-Trump-Official-Portrait.jpg?itok=eReCLE7X"
+                src="https://picsum.photos/400/500?random=15"
                 alt="Abhishek"
                 class="team-avatar"
               />
