@@ -164,6 +164,15 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
+                src="https://picsum.photos/400/500?random=8"
+                alt="Nihala"
+                class="team-avatar"
+              />
+              <h3 class="team-name">Nihala</h3>
+              <p class="team-role">Gear Manager</p>
+            </div>
+            <div class="team-card">
+              <img
                 src="https://picsum.photos/400/500?random=13"
                 alt="Abhishek"
                 class="team-avatar"
@@ -179,15 +188,6 @@ onMounted(() => {
               />
               <h3 class="team-name">Daniya</h3>
               <p class="team-role">Assistant Equipment Manager</p>
-            </div>
-            <div class="team-card">
-              <img
-                src="https://picsum.photos/400/500?random=8"
-                alt="Nihala"
-                class="team-avatar"
-              />
-              <h3 class="team-name">Nihala</h3>
-              <p class="team-role">Gear Manager</p>
             </div>
           </div>
         </div>
