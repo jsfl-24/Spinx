@@ -129,7 +129,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Official_portrait_of_Narendra_Modi%2C_2022_%28cropped%29.jpg"
+                src="https://static0.srcdn.com/wordpress/wp-content/uploads/2021/02/Rick-Astley-Never-Gonna-Give-You-Up-Remastered-Header.jpg?w=1200&h=900&fit=crop"
                 alt="Athif"
                 class="team-avatar"
               />
@@ -155,7 +155,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://static0.srcdn.com/wordpress/wp-content/uploads/2021/02/Rick-Astley-Never-Gonna-Give-You-Up-Remastered-Header.jpg?w=1200&h=900&fit=crop"
+                src="https://image.tmdb.org/t/p/original/lgyhDfIJSrh2UQc8mx3LyDYLZv1.jpg"
                 alt="Alin"
                 class="team-avatar"
               />
@@ -164,7 +164,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://image.tmdb.org/t/p/original/lgyhDfIJSrh2UQc8mx3LyDYLZv1.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrKlBcAbAJZKueIujU8OZCyoII0Rzpwx_RuLPHHKwRM9hdnW2QkcEUh38nD3oXaSZUUic9hi83dOfGEUM4G79nKIJTWUtAWrYodldDZ4&s=10"
                 alt="Nihala"
                 class="team-avatar"
               />
