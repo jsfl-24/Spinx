@@ -129,7 +129,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://pbs.twimg.com/media/G3yCn1EWYAAHOwI.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Official_portrait_of_Narendra_Modi%2C_2022_%28cropped%29.jpg"
                 alt="Athif"
                 class="team-avatar"
               />
@@ -164,7 +164,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Official_portrait_of_Narendra_Modi%2C_2022_%28cropped%29.jpg"
+                src="https://image.tmdb.org/t/p/original/lgyhDfIJSrh2UQc8mx3LyDYLZv1.jpg"
                 alt="Nihala"
                 class="team-avatar"
               />
