@@ -41,7 +41,7 @@ onMounted(() => {
           >
             <div class="team-card">
               <img
-                src="https://picsum.photos/400/500?random=14"
+                src="/src/assets/team/diya el fadhil.jpeg"
                 alt="Diya El Fadhil"
                 class="team-avatar"
               />
@@ -50,7 +50,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://picsum.photos/400/500?random=14"
+                src="/src/assets/team/nehna.jpeg"
                 alt="Nehna"
                 class="team-avatar"
               />
@@ -111,7 +111,7 @@ onMounted(() => {
           >
             <div class="team-card">
               <img
-                src="https://m.media-amazon.com/images/I/515zoJZj2-L._AC_UF894,1000_QL80_.jpg"
+                src="/src/assets/team/jasfal.jpg"
                 alt="Jasfal"
                 class="team-avatar"
               />
@@ -120,7 +120,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://picsum.photos/400/500?random=16"
+                src="/src/assets/team/neha.jpeg"
                 alt="Neha"
                 class="team-avatar"
               />
@@ -146,7 +146,7 @@ onMounted(() => {
           >
             <div class="team-card">
               <img
-                src="https://picsum.photos/400/500?random=17"
+                src="/src/assets/team/aswin.jpeg"
                 alt="Aswin"
                 class="team-avatar"
               />
@@ -180,9 +180,10 @@ onMounted(() => {
               <h3 class="team-name">Abhishek</h3>
               <p class="team-role">Equipment & Logistics Manager</p>
             </div>
-            <div class="team-card">
-              <img
-                src="https://picsum.photos/400/500?random=14"
+            <div class="team-card"
+            >
+              <img style="filter:brightness(-1) contrast(1.6);"
+                src="/src/assets/team/daniya.jpeg"
                 alt="Daniya"
                 class="team-avatar"
               />
@@ -330,9 +331,9 @@ onMounted(() => {
   }
 }
 
-.team-card:hover .team-avatar {
+/*.team-card:hover .team-avatar {
   filter: grayscale(0%);
-}
+}*/
 
 .team-name {
   font-size: 1rem;
