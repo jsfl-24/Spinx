@@ -1,3 +1,36 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isSubmitting = ref(false);
+
+const handleSubmit = async (event: Event) => {
+  if (isSubmitting.value) return;
+
+  const form = event.target as HTMLFormElement | null;
+  if (!form) return;
+
+  isSubmitting.value = true;
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      form.reset();
+    }
+  } finally {
+    window.setTimeout(() => {
+      isSubmitting.value = false;
+    }, 600);
+  }
+};
+</script>
+
 <template>
   <section id="contact" class="contact relative w-full overflow-hidden py-24">
     <div class="contact-bg absolute inset-0" />
@@ -19,7 +52,7 @@
 
       <div class="contact-grid grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div class="contact-info hidden lg:block">
-          <div class="contact-card ">
+          <div class="contact-card">
             <h3 class="contact-card-title">Training & Programs</h3>
             <p class="contact-card-text">
               From beginner training to advanced certification paths, we help
@@ -42,7 +75,13 @@
           </div>
         </div>
 
-        <form class="contact-form">
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/mzdajkaq"
+          method="POST"
+          @submit.prevent="handleSubmit"
+        >
+          <input type="hidden" name="_subject" value="SpinX Contact Form" />
           <label class="contact-label" for="contact-name">Name</label>
           <input
             id="contact-name"
@@ -50,6 +89,7 @@
             type="text"
             placeholder="Your full name"
             class="contact-input"
+            required
           />
 
           <label class="contact-label" for="contact-email">Email</label>
@@ -59,6 +99,7 @@
             type="email"
             placeholder="you@email.com"
             class="contact-input"
+            required
           />
 
           <label class="contact-label" for="contact-message">Message</label>
@@ -68,9 +109,17 @@
             rows="5"
             placeholder="Tell us about your goals"
             class="contact-textarea"
+            required
           ></textarea>
 
-          <button type="submit" class="contact-submit">Send Message</button>
+          <button type="submit" class="contact-submit" :disabled="isSubmitting">
+            <span
+              v-if="isSubmitting"
+              class="submit-spinner"
+              aria-hidden="true"
+            ></span>
+            {{ isSubmitting ? "Submitting..." : "Send Message" }}
+          </button>
         </form>
       </div>
     </div>
@@ -216,6 +265,9 @@
   color: #121212;
   border: none;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   transition:
     transform 0.2s ease,
     background 0.2s ease;
@@ -224,6 +276,27 @@
 .contact-submit:hover {
   background: #fff;
   transform: translateY(-2px);
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  transform: none;
+  opacity: 0.85;
+}
+
+.submit-spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(18, 18, 18, 0.25);
+  border-top-color: #121212;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1024px) {
