@@ -89,7 +89,7 @@ const handleSubmit = async (event: Event) => {
 
         <form
           class="contact-form"
-          action="https://formspree.io/f/mzdajkaq"
+          action="https://formspree.io/f/mvzbwvdo"
           method="POST"
           @submit.prevent="handleSubmit"
         >
