@@ -135,55 +135,54 @@ onMounted(() => {
         >
           <div class="feature-card">
             <div class="feature-icon"></div>
-            <h3 class="feature-name">Secure & Reliable</h3>
+            <h3 class="feature-name">Industry Aligned</h3>
             <p class="feature-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-              eiusmod tempor.
+              Curriculum designed around real-world drone applications and
+              current industry demands.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"></div>
-            <h3 class="feature-name">Lightning Fast</h3>
+            <h3 class="feature-name">Hands-On Training</h3>
             <p class="feature-desc">
-              Ut labore et dolore magna aliqua enim ad minim veniam quis nostrud
-              exercitation.
+              Practical learning through simulations, field training, and real
+              operational exposure.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"></div>
-            <h3 class="feature-name">Global Community</h3>
+            <h3 class="feature-name">Scalable Programs</h3>
             <p class="feature-desc">
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute
-              irure dolor.
+              Structured training models built to expand across regions and
+              institutions.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"></div>
-            <h3 class="feature-name">Innovation Driven</h3>
+            <h3 class="feature-name">Job-Ready Focus</h3>
             <p class="feature-desc">
-              Reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              We train professionals with deployable skills, not just
+              theoretical knowledge.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"></div>
-            <h3 class="feature-name">Community First</h3>
+            <h3 class="feature-name">Expert Instructors</h3>
             <p class="feature-desc">
-              Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-              officia deserunt.
+              Learn from certified trainers and active industry professionals.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"></div>
-            <h3 class="feature-name">Data Driven</h3>
+            <h3 class="feature-name">Future-Driven</h3>
             <p class="feature-desc">
-              Mollit anim id est laborum sed ut perspiciatis unde omnis iste
-              natus error sit voluptatem.
+              Powered by simulation technology and continuously evolving
+              curriculum.
             </p>
           </div>
         </div>
