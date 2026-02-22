@@ -5,6 +5,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import hackathonImg from "../assets/gallery/hackathon.jpg";
+import infinia2Img from "../assets/gallery/infinia2.0.jpg";
+import coconImg from "../assets/gallery/cocon.jpg";
+
 interface GalleryImage {
   id: string;
   src: string;
@@ -16,7 +20,7 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: "1",
-    src: "/src/assets/gallery/hackathon.jpg",
+    src: hackathonImg,
     alt: "TakeDown 2025",
     event: "Takedown - 24 Hour Hackathon",
     date: "February 2025",
@@ -30,7 +34,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: "3",
-    src: "/src/assets/gallery/infinia2.0.jpg",
+    src: infinia2Img,
     alt: "Sahrdaya Infinia 2.0",
     event: "Sahrdaya Infinia 2.0",
     date: "September 2025",
@@ -44,7 +48,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: "5",
-    src: "/src/assets/gallery/cocon.jpg",
+    src: coconImg,
     alt: "COCON Hacking and Cyber Security Conference",
     event: "COCON Hacking and Cyber Security Conference",
     date: "October 2025",
