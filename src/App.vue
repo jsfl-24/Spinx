@@ -5,6 +5,7 @@ import Team from "./components/Team.vue";
 import Gallery from "./components/Gallery.vue";
 import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
+import FloatingContactButton from "./components/FloatingContactButton.vue";
 </script>
 
 <template>
@@ -14,5 +15,6 @@ import Footer from "./components/Footer.vue";
   <Gallery />
   <Contact />
   <Footer />
+  <FloatingContactButton />
 </template>
 <style></style>
