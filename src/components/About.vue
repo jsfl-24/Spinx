@@ -218,14 +218,17 @@ onMounted(() => {
       <div class="cta-section text-center mt-32">
         <h2 class="cta-title">Ready to Join Us?</h2>
         <p class="cta-sub">
-          Be part of the revolution. Explore our documentaion, join our
-          community, or get in touch.
+          Be part of the future of drone innovation. Whether you're looking for
+          professional training, hands-on internship experience, or real-world
+          project collaboration — we're here to help you take off.
+          <br />
+          Explore our programs, view our work, or connect with us today.
         </p>
         <div
           class="cta-buttons flex flex-col sm:flex-row justify-center gap-4 mt-8"
         >
-          <button class="cta-primary">Gallery</button>
-          <button class="cta-secondary">Contact Us</button>
+          <a class="cta-primary" href="#gallery">View Gallery</a>
+          <a class="cta-secondary" href="#contact">Contact Us</a>
         </div>
       </div>
     </div>
@@ -442,6 +445,10 @@ onMounted(() => {
   transition: all 0.2s ease;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-primary {

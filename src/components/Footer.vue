@@ -1,5 +1,5 @@
 <template>
-  <footer id="contact" class="footer relative overflow-hidden">
+  <footer id="footer" class="footer relative overflow-hidden">
     <div class="footer-bg" />
     <div class="footer-orbits">
       <span class="orbit orbit-lg" />
@@ -34,7 +34,10 @@
                 <span class="contact-value">spinx.mediate@gmail.com</span>
               </a>
             </div>
-            <a class="contact-item" href="https://maps.app.goo.gl/ENSwvhJbLGAVxcdr7">
+            <a
+              class="contact-item"
+              href="https://maps.app.goo.gl/ENSwvhJbLGAVxcdr7"
+            >
               <span class="contact-label">Address</span>
               <span class="contact-value"
                 >Universal Engineering College<br />Vellangallur - Mathilakam
