@@ -2,6 +2,8 @@
 import { ref } from "vue";
 
 const isSubmitting = ref(false);
+const submitStatus = ref<"idle" | "success" | "error">("idle");
+const submitMessage = ref("");
 
 const handleSubmit = async (event: Event) => {
   if (isSubmitting.value) return;
@@ -10,6 +12,8 @@ const handleSubmit = async (event: Event) => {
   if (!form) return;
 
   isSubmitting.value = true;
+  submitStatus.value = "idle";
+  submitMessage.value = "";
 
   try {
     const response = await fetch(form.action, {
@@ -22,7 +26,15 @@ const handleSubmit = async (event: Event) => {
 
     if (response.ok) {
       form.reset();
+      submitStatus.value = "success";
+      submitMessage.value = "Success submission.";
+    } else {
+      submitStatus.value = "error";
+      submitMessage.value = "Unsuccessful submission. Why??";
     }
+  } catch (error) {
+    submitStatus.value = "error";
+    submitMessage.value = "Unsuccessful submission. Why??";
   } finally {
     window.setTimeout(() => {
       isSubmitting.value = false;
@@ -120,6 +132,15 @@ const handleSubmit = async (event: Event) => {
             ></span>
             {{ isSubmitting ? "Submitting..." : "Send Message" }}
           </button>
+          <p
+            v-if="submitMessage"
+            class="submit-status"
+            :class="submitStatus"
+            role="status"
+            aria-live="polite"
+          >
+            {{ submitMessage }}
+          </p>
         </form>
       </div>
     </div>
@@ -291,6 +312,20 @@ const handleSubmit = async (event: Event) => {
   border: 2px solid rgba(18, 18, 18, 0.25);
   border-top-color: #121212;
   animation: spin 0.8s linear infinite;
+}
+
+.submit-status {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.submit-status.success {
+  color: #f3f26b;
+}
+
+.submit-status.error {
+  color: rgba(255, 122, 122, 0.95);
 }
 
 @keyframes spin {
