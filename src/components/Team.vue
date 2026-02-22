@@ -51,10 +51,10 @@ onMounted(() => {
             <div class="team-card">
               <img
                 src="/src/assets/team/nehna.jpeg"
-                alt="Nehna"
+                alt="Nehna Faisal"
                 class="team-avatar"
               />
-              <h3 class="team-name">Nehna</h3>
+              <h3 class="team-name">Nehna Faisal</h3>
               <p class="team-role">Marketing Director</p>
             </div>
           </div>
