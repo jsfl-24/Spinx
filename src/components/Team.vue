@@ -173,7 +173,7 @@ onMounted(() => {
             </div>
             <div class="team-card">
               <img
-                src="https://picsum.photos/400/500?random=15"
+                src="/src/assets/team/abhishek.jpeg"
                 alt="Abhishek"
                 class="team-avatar"
               />
