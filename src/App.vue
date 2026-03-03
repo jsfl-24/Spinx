@@ -11,7 +11,7 @@ import FloatingContactButton from "./components/FloatingContactButton.vue";
 <template>
   <Hero />
   <About />
-  <Team />
+  
   <Gallery />
   <Contact />
   <Footer />
